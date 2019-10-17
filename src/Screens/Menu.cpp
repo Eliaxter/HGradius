@@ -3,6 +3,8 @@
 #include "raylib.h"
 
 #include "Game.h"
+#include "GamePlay.h"
+#include "Global.h"
 
 namespace Game
 {
@@ -13,7 +15,7 @@ namespace Game
 
 	void DrawTextMenu()
 	{
-		DrawText("Menu", 1280 / 2, 720 / 2, 30, WHITE);
+		DrawText("Menu", screenWidth / 2, screenHeight / 2, 30, WHITE);
 	}
 
 	void InputMenu()
@@ -21,6 +23,7 @@ namespace Game
 		if (IsKeyDown(KEY_ENTER))
 		{
 			state = GameState::Game;
+			InitGame();
 		}
 	}
 

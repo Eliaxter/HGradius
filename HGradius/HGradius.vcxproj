@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\GameObjects\Enemy.cpp" />
     <ClCompile Include="..\src\GameObjects\Player.cpp" />
     <ClCompile Include="..\src\Game\Game.cpp" />
     <ClCompile Include="..\src\Globals\Global.cpp" />
@@ -29,6 +30,7 @@
     <ClCompile Include="..\src\Screens\Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\GameObjects\Enemy.h" />
     <ClInclude Include="..\src\GameObjects\Player.h" />
     <ClInclude Include="..\src\Game\Game.h" />
     <ClInclude Include="..\src\Globals\Global.h" />

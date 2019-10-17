@@ -3,7 +3,10 @@
 
 namespace Game
 {
-	void InitPlayer();
+	void DrawGamePlay();
+	void InitGame();
+	void DrawEnemys();
+	void MoveEnemys();
 	void Update();
 	void Draw();
 }

@@ -36,6 +36,9 @@
     <ClCompile Include="..\src\Globals\Global.cpp">
       <Filter>Code</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\GameObjects\Enemy.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Screens\Credits.h">
@@ -57,6 +60,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Globals\Global.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameObjects\Enemy.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

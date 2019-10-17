@@ -5,7 +5,7 @@ namespace Game
 {
 	enum GameState 
 	{
-		Menu,
+		GameMenu,
 		FeedBack,
 		Game,
 		MenuFinal,

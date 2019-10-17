@@ -10,7 +10,7 @@
 
 namespace Game
 {
-	GameState state = GameState::Menu;
+	GameState state = GameState::GameMenu;
 
 	void GameLoop()
 	{
@@ -18,7 +18,8 @@ namespace Game
 		while (!WindowShouldClose())
 		{
 			BeginDrawing();
-			if (state == GameState::Menu)
+			ClearBackground(BLACK);
+			if (state == GameState::GameMenu)
 			{
 				Menu();
 			}
