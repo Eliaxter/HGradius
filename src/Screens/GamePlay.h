@@ -7,6 +7,7 @@ namespace Game
 	void InitGame();
 	void DrawEnemys();
 	void MoveEnemys();
+	void LimitScreenEnemy();
 	void Update();
 	void Draw();
 }

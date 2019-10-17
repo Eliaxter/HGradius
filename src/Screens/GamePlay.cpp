@@ -1,5 +1,6 @@
 #include "GamePlay.h"
 
+#include "Global.h"
 #include "Player.h"
 #include "Enemy.h"
 
@@ -30,12 +31,26 @@ namespace Game
 			enemys[i].x -= 500.0f * GetFrameTime();
 		}
 	}
+
+	void LimitScreenEnemy()
+	{
+		for (int i = 0; i < 50; i++)
+		{
+			if (enemys[i].x <= 0)
+			{
+				enemys[i].x = screenWidth;
+			}
+		}
+
+	}
+
 	void Update()
 	{
 		DrawEnemys();
 		MovePlayer();
 		LimitMove();
 		MoveEnemys();
+		LimitScreenEnemy();
 	}
 	void Draw()
 	{
