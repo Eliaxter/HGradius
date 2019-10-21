@@ -5,7 +5,11 @@
 
 namespace Game
 {
-	extern Rectangle enemys[50];
+	struct Enemy {
+		Rectangle pos;
+		bool isAlive;
+	};
+	extern Enemy enemies[50];
 
 	void InitEnemy();
 	void DrawEnemy();

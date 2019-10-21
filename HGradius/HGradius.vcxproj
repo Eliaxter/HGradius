@@ -22,21 +22,21 @@
     <ClCompile Include="..\src\GameObjects\Enemy.cpp" />
     <ClCompile Include="..\src\GameObjects\Player.cpp" />
     <ClCompile Include="..\src\Game\Game.cpp" />
-    <ClCompile Include="..\src\Globals\Global.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Screens\Credits.cpp" />
     <ClCompile Include="..\src\Screens\FinalMenu.cpp" />
     <ClCompile Include="..\src\Screens\GamePlay.cpp" />
+    <ClCompile Include="..\src\Screens\Global.cpp" />
     <ClCompile Include="..\src\Screens\Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\GameObjects\Enemy.h" />
     <ClInclude Include="..\src\GameObjects\Player.h" />
     <ClInclude Include="..\src\Game\Game.h" />
-    <ClInclude Include="..\src\Globals\Global.h" />
     <ClInclude Include="..\src\Screens\Credits.h" />
     <ClInclude Include="..\src\Screens\FinalMenu.h" />
     <ClInclude Include="..\src\Screens\GamePlay.h" />
+    <ClInclude Include="..\src\Screens\Global.h" />
     <ClInclude Include="..\src\Screens\Menu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

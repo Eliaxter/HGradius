@@ -3,8 +3,8 @@
 
 namespace Game
 {
-	extern const int screenWidth;
-	extern const int screenHeight;
+	extern int screenWidth;
+	extern int screenHeight;
 
 	void InitWindowGame();
 }

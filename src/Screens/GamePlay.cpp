@@ -25,7 +25,10 @@ namespace Game
 	{
 		for (int i = 0; i < 50; i++)
 		{
-			DrawRectangle(enemys[i].x, enemys[i].y, enemys[i].width, enemys[i].height, GREEN);
+			if (enemies[i].isAlive == true)
+			{
+				DrawRectangle(static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), static_cast<int>(enemies[i].pos.width), static_cast<int>(enemies[i].pos.height), GREEN);
+			}
 		}
 	}
 
@@ -33,7 +36,10 @@ namespace Game
 	{
 		for (int i = 0; i < 50; i++)
 		{
-			enemys[i].x -= 500.0f * GetFrameTime();
+			if (enemies[i].isAlive == true)
+			{
+				enemies[i].pos.x -= 500.0f * GetFrameTime();
+			}
 		}
 	}
 
@@ -41,10 +47,10 @@ namespace Game
 	{
 		for (int i = 0; i < 50; i++)
 		{
-			if (enemys[i].x <= 0)
+			if (enemies[i].pos.x <= 0)
 			{
-				enemys[i].x = screenWidth;
-				enemys[i].y = GetRandomValue(screenHeight, screenHeight / 7);
+				enemies[i].pos.x = screenWidth;
+				enemies[i].pos.y = GetRandomValue(screenHeight, screenHeight / 7);
 			}
 		}
 
@@ -52,10 +58,11 @@ namespace Game
 
 	void CheckCollisionEnemyPlayer()
 	{
-		for (int i = 0; i < 1; i++)
+		for (int i = 0; i < 50; i++)
 		{
-			if (CheckCollisionRecs(player, enemys[i]))
+			if (CheckCollisionRecs(player, enemies[i].pos))
 			{
+				enemies[i].isAlive = false;
 				lifesPlayer--;
 			}
 		}

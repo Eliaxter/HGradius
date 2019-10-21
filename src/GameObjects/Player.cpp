@@ -23,7 +23,7 @@ namespace Game
 
 	void DrawPlayer()
 	{
-		DrawRectangle(player.x, player.y, player.width, player.height, WHITE);
+		DrawRectangle(static_cast<int>(player.x), static_cast<int>(player.y), static_cast<int>(player.width), static_cast<int>(player.height), WHITE);
 	}
 
 	void MovePlayer()

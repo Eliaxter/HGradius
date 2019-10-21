@@ -1,69 +1,72 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source">
-      <UniqueIdentifier>{e7df7dcb-a241-4099-b298-e126acdc4501}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{ca660aaf-52c4-48ba-ba0a-09cba3479c59}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers">
-      <UniqueIdentifier>{d285174b-b94a-4a8d-8551-e6bc1ec0eed2}</UniqueIdentifier>
+    <Filter Include="src\Screens">
+      <UniqueIdentifier>{2b7ac0ac-3b89-4b54-8ee3-17efad3949f0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code">
-      <UniqueIdentifier>{bc8a106b-1633-4610-bed9-719b55813370}</UniqueIdentifier>
+    <Filter Include="src\GameObjects">
+      <UniqueIdentifier>{8ca2f8bc-60df-4ea2-b4fc-62086ad0eef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game">
+      <UniqueIdentifier>{239636b6-d008-4781-9555-b0a44243b68b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Screens\Credits.cpp">
-      <Filter>Code</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Screens\FinalMenu.cpp">
-      <Filter>Code</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Screens\GamePlay.cpp">
-      <Filter>Code</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Screens\Menu.cpp">
-      <Filter>Code</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Game\Game.cpp">
-      <Filter>Code</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\GameObjects\Player.cpp">
-      <Filter>Code</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Globals\Global.cpp">
-      <Filter>Code</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\src\GameObjects\Enemy.cpp">
-      <Filter>Code</Filter>
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameObjects\Player.cpp">
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game\Game.cpp">
+      <Filter>src\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\Credits.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\FinalMenu.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\GamePlay.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\Global.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\Menu.cpp">
+      <Filter>src\Screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Screens\Credits.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Screens\FinalMenu.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Screens\GamePlay.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Screens\Menu.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Game\Game.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\src\GameObjects\Enemy.h">
+      <Filter>src\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="..\src\GameObjects\Player.h">
-      <Filter>Headers</Filter>
+      <Filter>src\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Globals\Global.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\src\Game\Game.h">
+      <Filter>src\Game</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\GameObjects\Enemy.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\src\Screens\Credits.h">
+      <Filter>src\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screens\FinalMenu.h">
+      <Filter>src\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screens\GamePlay.h">
+      <Filter>src\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screens\Global.h">
+      <Filter>src\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screens\Menu.h">
+      <Filter>src\Screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

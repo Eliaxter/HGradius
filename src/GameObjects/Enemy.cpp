@@ -6,17 +6,18 @@
 
 namespace Game 
 {
-	const int enemysSize = 50;
-	Rectangle enemys[enemysSize] = { 0 };
+	const int enemiesSize = 50;
+	Enemy enemies[enemiesSize] = { 0 };
 
 	void InitEnemy()
 	{
-		for (int i = 0; i < 1; i++)
+		for (int i = 0; i < 50; i++)
 		{
-			enemys[i].x = GetRandomValue(screenWidth, screenWidth / 2);
-			enemys[i].y = GetRandomValue(screenHeight, screenHeight / 7);
-			enemys[i].width = 50.0f;
-			enemys[i].height = 15.0f;
+			enemies[i].pos.x = GetRandomValue(screenWidth, screenWidth / 2);
+			enemies[i].pos.y = GetRandomValue(screenHeight, screenHeight / 7);
+			enemies[i].pos.width = 50.0f;
+			enemies[i].pos.height = 15.0f;
+			enemies[i].isAlive = true;
 		}
 	}
 
@@ -24,7 +25,7 @@ namespace Game
 	{
 		for (int i = 0; i < 1; i++)
 		{
-			DrawRectangle(enemys[i].x, enemys[i].y, enemys[i].width, enemys[i].height, GREEN);
+			DrawRectangle(static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), static_cast<int>(enemies[i].pos.width), static_cast<int>(enemies[i].pos.height), GREEN);
 		}
 	}
 
