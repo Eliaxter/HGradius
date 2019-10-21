@@ -9,21 +9,28 @@ namespace Game
 	const int enemiesSize = 50;
 	Enemy enemies[enemiesSize] = { 0 };
 
+	float speedEnemy = 500.0f;
+
+	static float enemyWidth = 50.0f;
+	static float enemyHeight = 15.0f;
+
+	static int oneEnemy = 1;
+
 	void InitEnemy()
 	{
-		for (int i = 0; i < 50; i++)
+		for (int i = 0; i < enemiesSize; i++)
 		{
 			enemies[i].pos.x = GetRandomValue(screenWidth, screenWidth / 2);
 			enemies[i].pos.y = GetRandomValue(screenHeight, screenHeight / 7);
-			enemies[i].pos.width = 50.0f;
-			enemies[i].pos.height = 15.0f;
+			enemies[i].pos.width = enemyWidth;
+			enemies[i].pos.height = enemyHeight;
 			enemies[i].isAlive = true;
 		}
 	}
 
 	void DrawEnemy()
 	{
-		for (int i = 0; i < 1; i++)
+		for (int i = 0; i < oneEnemy; i++)
 		{
 			DrawRectangle(static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), static_cast<int>(enemies[i].pos.width), static_cast<int>(enemies[i].pos.height), GREEN);
 		}

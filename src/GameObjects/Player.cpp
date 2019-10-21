@@ -12,12 +12,18 @@ namespace Game
 	int pointsPlayer = 5;
 	int lifesPlayer = 3;
 
+	static float playerPosX = screenWidth / 7;
+	static float playerPosY = screenHeight / 7;
+
+	static float playerWidth = 40.0f;
+	static float playerHeight = 20.0f;
+
 	void InitPlayer()
 	{
-		player.width = 40.0f;
-		player.height = 20.0f;
-		player.x = screenWidth / 7;
-		player.y = screenHeight / 7;
+		player.width = playerWidth;
+		player.height = playerHeight;
+		player.x = playerPosX;
+		player.y = playerPosY;
 		playerSpeed = 600.0f;
 	}
 
@@ -40,9 +46,9 @@ namespace Game
 	
 	void LimitMove()
 	{
-		if ((player.y) <= 0)
+		if ((player.y) <= minScreenHeight)
 		{
-			player.y = 0;
+			player.y = minScreenHeight;
 		}
 		if ((player.y + player.height) >= screenHeight)
 		{

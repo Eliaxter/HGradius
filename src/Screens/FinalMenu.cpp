@@ -3,9 +3,13 @@
 #include "raylib.h"
 
 #include "Game.h"
+#include "Global.h"
 
 namespace Game
 {
+
+	static int fontSize = 30;
+
 	void InitScreenFinalMenu() 
 	{
 		ClearBackground(BLACK);
@@ -13,7 +17,7 @@ namespace Game
 
 	void DrawTextFinalMenu()
 	{
-		DrawText("End of Game", 1280 / 2, 720 / 2, 30, WHITE);
+		DrawText("End of Game", halfScreenWidth, halfScreenHeight, fontSize, WHITE);
 	}
 
 	void InputFinalMenu()

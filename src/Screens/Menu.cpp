@@ -8,6 +8,13 @@
 
 namespace Game
 {
+	static int fontSize1 = 20;
+	static int fontSize2 = 30;
+
+	static int coordTxt1Y = 420;
+	static int coordTxt2Y = 480;
+	static int coordTxt3Y = 500;
+
 	void InitMenuScreen()
 	{
 		ClearBackground(BLACK);
@@ -15,10 +22,10 @@ namespace Game
 
 	void DrawTextMenu()
 	{
-		DrawText("HGradius", screenWidth / 2, screenHeight / 2, 30, WHITE);
-		DrawText("Menu", screenWidth / 2, 420, 30, WHITE);
-		DrawText("Press the key ENTER to play", screenWidth / 2, 480, 20, WHITE);
-		DrawText("Version: 0.1", screenWidth / 2, 500, 20, WHITE);
+		DrawText("HGradius", halfScreenWidth, halfScreenHeight, fontSize2, WHITE);
+		DrawText("Menu", halfScreenWidth, coordTxt1Y, fontSize2, WHITE);
+		DrawText("Press the key ENTER to play", halfScreenWidth, coordTxt2Y, fontSize1, WHITE);
+		DrawText("Version: 0.1", halfScreenWidth, coordTxt3Y, fontSize1, WHITE);
 	}
 
 	void InputMenu()

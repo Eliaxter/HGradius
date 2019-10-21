@@ -6,6 +6,12 @@ namespace Game
 	extern int screenWidth;
 	extern int screenHeight;
 
+	extern int minScreenWidth;
+	extern int minScreenHeight;
+
+	extern int halfScreenWidth;
+	extern int halfScreenHeight;
+
 	void InitWindowGame();
 }
 #endif

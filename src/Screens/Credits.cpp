@@ -8,6 +8,11 @@
 
 namespace Game
 {
+	static int fontSize1 = 30;
+	static int fontSize2 = 20;
+
+	static int textPosY = 400;
+
 	void InitCreditsScreen()
 	{
 		ClearBackground(BLACK);
@@ -15,8 +20,8 @@ namespace Game
 
 	void DrawTextCredits()
 	{
-		DrawText("Credits", screenWidth / 2, screenHeight / 2, 30, WHITE);
-		DrawText("Version 0.1", screenWidth / 2, 400, 20, WHITE);
+		DrawText("Credits", halfScreenWidth, halfScreenHeight, fontSize1, WHITE);
+		DrawText("Version 0.1", halfScreenWidth, textPosY, fontSize2, WHITE);
 	}
 
 	void InputCredits()

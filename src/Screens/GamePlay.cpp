@@ -7,8 +7,11 @@
 
 namespace Game
 {
-
 	static bool pause = false;
+
+	static int heightDivisor = 7;
+
+	static int fontSizePause = 50;
 
 	void DrawGamePlay()
 	{
@@ -26,7 +29,7 @@ namespace Game
 
 	void DrawEnemys()
 	{
-		for (int i = 0; i < 50; i++)
+		for (int i = 0; i < enemiesSize; i++)
 		{
 			if (enemies[i].isAlive == true)
 			{
@@ -37,23 +40,23 @@ namespace Game
 
 	void MoveEnemys()
 	{
-		for (int i = 0; i < 50; i++)
+		for (int i = 0; i < enemiesSize; i++)
 		{
 			if (enemies[i].isAlive == true)
 			{
-				enemies[i].pos.x -= 500.0f * GetFrameTime();
+				enemies[i].pos.x -= speedEnemy * GetFrameTime();
 			}
 		}
 	}
 
 	void LimitScreenEnemy()
 	{
-		for (int i = 0; i < 50; i++)
+		for (int i = 0; i < enemiesSize; i++)
 		{
-			if (enemies[i].pos.x <= 0)
+			if (enemies[i].pos.x <= minScreenWidth)
 			{
 				enemies[i].pos.x = screenWidth;
-				enemies[i].pos.y = GetRandomValue(screenHeight, screenHeight / 7);
+				enemies[i].pos.y = GetRandomValue(screenHeight, screenHeight / heightDivisor);
 			}
 		}
 
@@ -61,7 +64,7 @@ namespace Game
 
 	void CheckCollisionEnemyPlayer()
 	{
-		for (int i = 0; i < 50; i++)
+		for (int i = 0; i < enemiesSize; i++)
 		{
 			if (CheckCollisionRecs(player, enemies[i].pos))
 			{
@@ -102,7 +105,7 @@ namespace Game
 		}
 		else
 		{
-			DrawText("PAUSA", screenWidth / 2, screenHeight / 2, 50, WHITE);
+			DrawText("PAUSA", halfScreenWidth, halfScreenHeight, fontSizePause, WHITE);
 			if (IsKeyDown(KEY_SPACE))
 			{
 				pause = false;

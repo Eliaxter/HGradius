@@ -9,7 +9,12 @@ namespace Game
 		Rectangle pos;
 		bool isAlive;
 	};
+
 	extern Enemy enemies[50];
+
+	extern const int enemiesSize;
+
+	extern float speedEnemy;
 
 	void InitEnemy();
 	void DrawEnemy();
