@@ -7,6 +7,9 @@
 
 namespace Game
 {
+
+	static bool pause = false;
+
 	void DrawGamePlay()
 	{
 		ClearBackground(BLACK);
@@ -77,14 +80,39 @@ namespace Game
 		}
 	}
 
+	void PauseInput()
+	{
+		if (IsKeyDown(KEY_SPACE))
+		{
+			pause = true;
+		}
+	}
+
 	void Update()
 	{
-		MovePlayer();
-		LimitMove();
-		MoveEnemys();
-		LimitScreenEnemy();
-		CheckCollisionEnemyPlayer();
-		CheckLifesPlayer();
+		if (pause == false)
+		{
+			MovePlayer();
+			LimitMove();
+			MoveEnemys();
+			LimitScreenEnemy();
+			CheckCollisionEnemyPlayer();
+			CheckLifesPlayer();
+			PauseInput();
+		}
+		else
+		{
+			DrawText("PAUSA", screenWidth / 2, screenHeight / 2, 50, WHITE);
+			if (IsKeyDown(KEY_SPACE))
+			{
+				pause = false;
+			}
+			if (IsKeyUp(KEY_SPACE))
+			{
+				pause = true;
+			}
+		}
+		
 	}
 
 	void Draw()

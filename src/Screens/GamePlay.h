@@ -10,6 +10,7 @@ namespace Game
 	void LimitScreenEnemy();
 	void CheckCollisionEnemyPlayer();
 	void CheckLifesPlayer();
+	void PauseInput();
 	void Update();
 	void Draw();
 }

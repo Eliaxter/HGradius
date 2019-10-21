@@ -14,8 +14,8 @@ namespace Game
 
 	void InitPlayer()
 	{
-		player.width = 100.0f;
-		player.height = 30.0f;
+		player.width = 40.0f;
+		player.height = 20.0f;
 		player.x = screenWidth / 7;
 		player.y = screenHeight / 7;
 		playerSpeed = 600.0f;
