@@ -16,6 +16,7 @@ namespace Game
 	void DrawTextCredits()
 	{
 		DrawText("Credits", screenWidth / 2, screenHeight / 2, 30, WHITE);
+		DrawText("Version 0.1", screenWidth / 2, 400, 20, WHITE);
 	}
 
 	void InputCredits()

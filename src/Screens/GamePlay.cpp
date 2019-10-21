@@ -52,7 +52,7 @@ namespace Game
 
 	void CheckCollisionEnemyPlayer()
 	{
-		for (int i = 0; i < 50; i++)
+		for (int i = 0; i < 1; i++)
 		{
 			if (CheckCollisionRecs(player, enemys[i]))
 			{
