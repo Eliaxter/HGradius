@@ -14,7 +14,7 @@ namespace Game
 
 	extern GameState state;
 
-	void GameLoop();
+	void Loop();
 }
 
 #endif

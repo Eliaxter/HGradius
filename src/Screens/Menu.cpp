@@ -15,7 +15,9 @@ namespace Game
 
 	void DrawTextMenu()
 	{
-		DrawText("Menu", screenWidth / 2, screenHeight / 2, 30, WHITE);
+		DrawText("HGradius", screenWidth / 2, screenHeight / 2, 30, WHITE);
+		DrawText("Menu", screenWidth / 2, 420, 30, WHITE);
+		DrawText("Press the key ENTER to play", screenWidth / 2, 480, 20, WHITE);
 	}
 
 	void InputMenu()

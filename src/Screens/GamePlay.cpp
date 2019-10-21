@@ -3,6 +3,7 @@
 #include "Global.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Game.h"
 
 namespace Game
 {
@@ -10,13 +11,16 @@ namespace Game
 	{
 		ClearBackground(BLACK);
 	}
+
 	void InitGame()
 	{
 		DrawGamePlay();
 		InitPlayer();
 		InitEnemy();
 		DrawEnemy();
+		lifesPlayer = 3;
 	}
+
 	void DrawEnemys()
 	{
 		for (int i = 0; i < 50; i++)
@@ -24,6 +28,7 @@ namespace Game
 			DrawRectangle(enemys[i].x, enemys[i].y, enemys[i].width, enemys[i].height, GREEN);
 		}
 	}
+
 	void MoveEnemys()
 	{
 		for (int i = 0; i < 50; i++)
@@ -39,19 +44,42 @@ namespace Game
 			if (enemys[i].x <= 0)
 			{
 				enemys[i].x = screenWidth;
+				enemys[i].y = GetRandomValue(screenHeight, screenHeight / 7);
 			}
 		}
 
 	}
 
+	void CheckCollisionEnemyPlayer()
+	{
+		for (int i = 0; i < 50; i++)
+		{
+			if (CheckCollisionRecs(player, enemys[i]))
+			{
+				lifesPlayer--;
+			}
+		}
+		
+	}
+
+	void CheckLifesPlayer() 
+	{
+		if (lifesPlayer <= 0)
+		{
+			state = GameState::MenuFinal;
+		}
+	}
+
 	void Update()
 	{
-		DrawEnemys();
 		MovePlayer();
 		LimitMove();
 		MoveEnemys();
 		LimitScreenEnemy();
+		CheckCollisionEnemyPlayer();
+		CheckLifesPlayer();
 	}
+
 	void Draw()
 	{
 		DrawPlayer();

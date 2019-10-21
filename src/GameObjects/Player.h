@@ -8,6 +8,9 @@ namespace Game
 	extern Rectangle player;
 	extern float playerSpeed;
 
+	extern int pointsPlayer;
+	extern int lifesPlayer;
+
 	void InitPlayer();
 	void DrawPlayer();
 	void MovePlayer();

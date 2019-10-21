@@ -12,7 +12,7 @@ namespace Game
 {
 	GameState state = GameState::GameMenu;
 
-	void GameLoop()
+	void Loop()
 	{
 		InitWindowGame();
 		while (!WindowShouldClose())
@@ -31,6 +31,10 @@ namespace Game
 			if (state == GameState::MenuFinal)
 			{
 				FinalMenu();
+			}
+			if (state == GameState::Credits)
+			{
+				CreditsScreen();
 			}
 			EndDrawing();
 		}

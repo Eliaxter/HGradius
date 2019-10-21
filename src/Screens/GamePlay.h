@@ -8,6 +8,8 @@ namespace Game
 	void DrawEnemys();
 	void MoveEnemys();
 	void LimitScreenEnemy();
+	void CheckCollisionEnemyPlayer();
+	void CheckLifesPlayer();
 	void Update();
 	void Draw();
 }

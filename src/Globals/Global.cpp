@@ -9,7 +9,7 @@ namespace Game
 
 	void InitWindowGame()
 	{
-		InitWindow(1280, 720, "HGradius");
+		InitWindow(screenWidth, screenHeight, "HGradius");
 	}
 }
 

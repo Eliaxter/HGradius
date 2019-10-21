@@ -9,13 +9,16 @@ namespace Game
 	Rectangle player;
 	float playerSpeed;
 
+	int pointsPlayer = 5;
+	int lifesPlayer = 3;
+
 	void InitPlayer()
 	{
 		player.width = 100.0f;
 		player.height = 30.0f;
 		player.x = screenWidth / 7;
 		player.y = screenHeight / 7;
-		playerSpeed = 500.0f;
+		playerSpeed = 600.0f;
 	}
 
 	void DrawPlayer()
