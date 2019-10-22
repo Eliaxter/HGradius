@@ -8,4 +8,4 @@
 
 <p>Game developed by:</p>
 <p>Elias Brucart</p>
-<p>Mail: </p><a href="mailto:eliasbrucart@hardgames.com.ar">eliasbrucart@hardgames.com.ar</a>
+<p>Mail: <a href="mailto:eliasbrucart@hardgames.com.ar">eliasbrucart@hardgames.com.ar</a></p>
