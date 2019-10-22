@@ -5,5 +5,5 @@
 <h1>Credits</h1>
 
 <p>Game developed by:</p>
-<p>Elias Brucart</p><br>
+<p>Elias Brucart</p>
 <a href="mailto:eliasbrucart@hardgames.com.ar">eliasbrucart@hardgames.com.ar</a>
