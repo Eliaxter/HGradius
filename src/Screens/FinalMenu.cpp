@@ -9,6 +9,10 @@ namespace Game
 {
 
 	static int fontSize = 30;
+	static int fontSize2 = 20;
+
+	static int coordTxT1Y = 400;
+	static int coordTxT2Y = 440;
 
 	void InitScreenFinalMenu() 
 	{
@@ -18,6 +22,8 @@ namespace Game
 	void DrawTextFinalMenu()
 	{
 		DrawText("End of Game", halfScreenWidth, halfScreenHeight, fontSize, WHITE);
+		DrawText("Press M to return to menu", halfScreenWidth, coordTxT1Y, fontSize2, WHITE);
+		DrawText("Press C to view the credits", halfScreenWidth, coordTxT2Y, fontSize2, WHITE);
 	}
 
 	void InputFinalMenu()
@@ -25,6 +31,10 @@ namespace Game
 		if (IsKeyDown(KEY_C))
 		{
 			state = GameState::Credits;
+		}
+		if (IsKeyDown(KEY_M))
+		{
+			state = GameState::GameMenu;
 		}
 	}
 
