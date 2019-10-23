@@ -93,7 +93,7 @@ namespace Game
 
 	void PauseInput()
 	{
-		if (IsKeyDown(KEY_SPACE))
+		if (IsKeyPressed(KEY_SPACE))
 		{
 			pause = true;
 		}
@@ -123,13 +123,9 @@ namespace Game
 		else
 		{
 			DrawText("PAUSA", halfScreenWidth, halfScreenHeight, fontSizePause, WHITE);
-			if (IsKeyDown(KEY_SPACE))
+			if (IsKeyPressed(KEY_SPACE))
 			{
 				pause = false;
-			}
-			if (IsKeyUp(KEY_SPACE))
-			{
-				pause = true;
 			}
 		}
 		

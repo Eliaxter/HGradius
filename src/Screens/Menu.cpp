@@ -37,7 +37,7 @@ namespace Game
 		}
 		if (IsKeyDown(KEY_ESCAPE))
 		{
-
+			CloseWindow();
 		}
 	}
 
