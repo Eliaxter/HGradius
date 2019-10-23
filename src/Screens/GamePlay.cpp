@@ -91,6 +91,14 @@ namespace Game
 		}
 	}
 
+	void BackMenuInput()
+	{
+		if (IsKeyDown(KEY_M))
+		{
+			state = GameState::GameMenu;
+		}
+	}
+
 	void Update()
 	{
 		if (pause == false)
@@ -102,6 +110,7 @@ namespace Game
 			CheckCollisionEnemyPlayer();
 			CheckLifesPlayer();
 			PauseInput();
+			BackMenuInput();
 		}
 		else
 		{

@@ -36,6 +36,10 @@ namespace Game
 			{
 				CreditsScreen();
 			}
+			if (state == GameState::Close)
+			{
+				CloseWindow();
+			}
 			EndDrawing();
 		}
 

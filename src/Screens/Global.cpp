@@ -15,7 +15,7 @@ namespace Game
 
 	void InitWindowGame()
 	{
-		InitWindow(screenWidth, screenHeight, "HGradius");
+		InitWindow(screenWidth, screenHeight, "HGradius V0.1");
 	}
 }
 

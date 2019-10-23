@@ -11,6 +11,7 @@ namespace Game
 	void CheckCollisionEnemyPlayer();
 	void CheckLifesPlayer();
 	void PauseInput();
+	void BackMenuInput();
 	void Update();
 	void Draw();
 }

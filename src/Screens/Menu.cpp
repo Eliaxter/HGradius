@@ -25,7 +25,7 @@ namespace Game
 		DrawText("HGradius", halfScreenWidth, halfScreenHeight, fontSize2, WHITE);
 		DrawText("Menu", halfScreenWidth, coordTxt1Y, fontSize2, WHITE);
 		DrawText("Press the key ENTER to play", halfScreenWidth, coordTxt2Y, fontSize1, WHITE);
-		DrawText("Version: 0.1", halfScreenWidth, coordTxt3Y, fontSize1, WHITE);
+		DrawText("Version: 0.2", halfScreenWidth, coordTxt3Y, fontSize1, WHITE);
 	}
 
 	void InputMenu()
@@ -34,6 +34,10 @@ namespace Game
 		{
 			state = GameState::Game;
 			InitGame();
+		}
+		if (IsKeyDown(KEY_ESCAPE))
+		{
+
 		}
 	}
 

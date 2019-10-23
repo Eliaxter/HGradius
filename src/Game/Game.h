@@ -9,7 +9,8 @@ namespace Game
 		FeedBack,
 		Game,
 		MenuFinal,
-		Credits
+		Credits,
+		Close
 	};
 
 	extern GameState state;
