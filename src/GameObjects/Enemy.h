@@ -10,11 +10,15 @@ namespace Game
 		bool isAlive;
 	};
 
-	extern Enemy enemies[50];
+	extern Enemy enemies[5];
 
 	extern const int enemiesSize;
 
 	extern float speedEnemy;
+
+	extern int countEnemy;
+
+	extern bool limitEnemies;
 
 	void InitEnemy();
 	void DrawEnemy();

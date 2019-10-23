@@ -25,17 +25,25 @@ namespace Game
 		InitEnemy();
 		DrawEnemy();
 		lifesPlayer = 3;
+		limitEnemies = false;
 	}
 
 	void DrawEnemys()
 	{
 		for (int i = 0; i < enemiesSize; i++)
 		{
-			if (enemies[i].isAlive == true)
+			if (limitEnemies == false)
 			{
 				DrawRectangle(static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), static_cast<int>(enemies[i].pos.width), static_cast<int>(enemies[i].pos.height), GREEN);
+				countEnemy++;
+				if (countEnemy == enemiesSize)
+				{
+					limitEnemies = true;
+				}
 			}
 		}
+		countEnemy = 0;
+		limitEnemies = false;
 	}
 
 	void MoveEnemys()

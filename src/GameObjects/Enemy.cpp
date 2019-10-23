@@ -6,10 +6,14 @@
 
 namespace Game 
 {
-	const int enemiesSize = 50;
+	const int enemiesSize = 5;
 	Enemy enemies[enemiesSize] = { 0 };
 
 	float speedEnemy = 500.0f;
+
+	int countEnemy = 0;
+
+	bool limitEnemies;
 
 	static float enemyWidth = 50.0f;
 	static float enemyHeight = 15.0f;
