@@ -13,6 +13,8 @@ namespace Game
 	int halfScreenWidth = screenWidth / 2;
 	int halfScreenHeight = screenHeight / 2;
 
+	float timer = 0.0f;
+
 	void InitWindowGame()
 	{
 		InitWindow(screenWidth, screenHeight, "HGradius V0.2");

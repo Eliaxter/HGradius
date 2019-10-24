@@ -13,6 +13,7 @@ namespace Game
 
 	static int fontSizePause = 50;
 
+
 	void DrawGamePlay()
 	{
 		ClearBackground(BLACK);
@@ -26,6 +27,7 @@ namespace Game
 		DrawEnemy();
 		lifesPlayer = 3;
 		limitEnemies = false;
+		timer = 0.0f;
 	}
 
 	void DrawEnemys()
@@ -107,6 +109,17 @@ namespace Game
 		}
 	}
 
+	void BackGround()
+	{
+		if (timer / static_cast<float>(GetFPS()) > 10.0f)
+		{
+			for (int i = 0; i < 1; i++)
+			{
+				DrawRectangle(screenWidth / 2, screenHeight / 2, 50, 10, WHITE);
+			}
+		}
+	}
+
 	void Update()
 	{
 		if (pause == false)
@@ -135,5 +148,6 @@ namespace Game
 	{
 		DrawPlayer();
 		DrawEnemys();
+		BackGround();
 	}
 }

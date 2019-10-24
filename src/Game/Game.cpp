@@ -27,6 +27,7 @@ namespace Game
 			{
 				Update();
 				Draw();
+				timer++;
 			}
 			if (state == GameState::MenuFinal)
 			{

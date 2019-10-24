@@ -8,6 +8,7 @@ namespace Game
 	struct Enemy {
 		Rectangle pos;
 		bool isAlive;
+		Texture2D sprite;
 	};
 
 	extern Enemy enemies[5];

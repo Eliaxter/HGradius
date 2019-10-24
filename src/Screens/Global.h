@@ -12,6 +12,8 @@ namespace Game
 	extern int halfScreenWidth;
 	extern int halfScreenHeight;
 
+	extern float timer;
+
 	void InitWindowGame();
 }
 #endif

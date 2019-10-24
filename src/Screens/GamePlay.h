@@ -12,6 +12,7 @@ namespace Game
 	void CheckLifesPlayer();
 	void PauseInput();
 	void BackMenuInput();
+	void BackGround();
 	void Update();
 	void Draw();
 }
