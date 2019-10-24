@@ -3,6 +3,7 @@
 #include "Global.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Asteroid.h"
 #include "Game.h"
 
 namespace Game
@@ -25,6 +26,8 @@ namespace Game
 		InitPlayer();
 		InitEnemy();
 		DrawEnemy();
+		InitAsteroid();
+		DrawAsteroid();
 		lifesPlayer = 3;
 		limitEnemies = false;
 		timer = 0.0f;
@@ -36,7 +39,7 @@ namespace Game
 		{
 			if (limitEnemies == false)
 			{
-				DrawRectangle(static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), static_cast<int>(enemies[i].pos.width), static_cast<int>(enemies[i].pos.height), GREEN);
+				DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 				countEnemy++;
 				if (countEnemy == enemiesSize)
 				{
@@ -54,7 +57,7 @@ namespace Game
 		{
 			if (enemies[i].isAlive == true)
 			{
-				enemies[i].pos.x -= speedEnemy * GetFrameTime();
+				enemies[i].rec.x -= speedEnemy * GetFrameTime();
 			}
 		}
 	}
@@ -63,20 +66,55 @@ namespace Game
 	{
 		for (int i = 0; i < enemiesSize; i++)
 		{
-			if (enemies[i].pos.x <= minScreenWidth)
+			if (enemies[i].rec.x <= minScreenWidth)
 			{
-				enemies[i].pos.x = screenWidth;
-				enemies[i].pos.y = GetRandomValue(screenHeight, screenHeight / heightDivisor);
+				enemies[i].rec.x = screenWidth;
+				enemies[i].rec.y = GetRandomValue(screenHeight, screenHeight / heightDivisor);
 			}
 		}
 
+	}
+
+	void DrawAsteroids()
+	{
+		if (timer / static_cast<float>(GetFPS()) > 10.0f)
+		{
+			for (int i = 0; i < asteroidSize; i++)
+			{
+				DrawRectangle(screenWidth / 2, screenHeight / 2, asteroid1[i].rec.width, asteroid1[i].rec.height, WHITE);
+			}
+
+		}
+	}
+
+	void MoveAsteroids()
+	{
+		for (int i = 0; i < asteroidSize; i++)
+		{
+			if (asteroid1[i].isAlive == true)
+			{
+				asteroid1[i].rec.x -= speedAsteroid * GetFrameTime();
+			}
+		}
+	}
+
+	void LimitScreenAsteroids()
+	{
+		for (int i = 0; i < asteroidSize; i++)
+		{
+			if (asteroid1[i].rec.x <= minScreenWidth)
+			{
+				asteroid1[i].rec.x = screenWidth;
+				asteroid1[i].rec.y = GetRandomValue(screenHeight, screenHeight / heightDivisor);
+			}
+		}
 	}
 
 	void CheckCollisionEnemyPlayer()
 	{
 		for (int i = 0; i < enemiesSize; i++)
 		{
-			if (CheckCollisionRecs(player, enemies[i].pos))
+			if (CheckCollisionRecs(player, enemies[i].rec))
 			{
 				enemies[i].isAlive = false;
 				lifesPlayer--;
@@ -111,13 +149,7 @@ namespace Game
 
 	void BackGround()
 	{
-		if (timer / static_cast<float>(GetFPS()) > 10.0f)
-		{
-			for (int i = 0; i < 1; i++)
-			{
-				DrawRectangle(screenWidth / 2, screenHeight / 2, 50, 10, WHITE);
-			}
-		}
+		
 	}
 
 	void Update()
@@ -128,6 +160,8 @@ namespace Game
 			LimitMove();
 			MoveEnemys();
 			LimitScreenEnemy();
+			MoveAsteroids();
+			LimitScreenAsteroids();
 			CheckCollisionEnemyPlayer();
 			CheckLifesPlayer();
 			PauseInput();
@@ -148,6 +182,6 @@ namespace Game
 	{
 		DrawPlayer();
 		DrawEnemys();
-		BackGround();
+		DrawAsteroids();
 	}
 }

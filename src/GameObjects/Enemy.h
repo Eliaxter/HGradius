@@ -6,7 +6,7 @@
 namespace Game
 {
 	struct Enemy {
-		Rectangle pos;
+		Rectangle rec;
 		bool isAlive;
 		Texture2D sprite;
 	};

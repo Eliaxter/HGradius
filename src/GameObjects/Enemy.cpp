@@ -24,11 +24,12 @@ namespace Game
 	{
 		for (int i = 0; i < enemiesSize; i++)
 		{
-			enemies[i].pos.x = GetRandomValue(screenWidth, screenWidth / 2);
-			enemies[i].pos.y = GetRandomValue(screenHeight, screenHeight / 7);
-			enemies[i].pos.width = enemyWidth;
-			enemies[i].pos.height = enemyHeight;
+			enemies[i].rec.x = GetRandomValue(screenWidth, screenWidth / 2);
+			enemies[i].rec.y = GetRandomValue(screenHeight, screenHeight / 7);
+			enemies[i].rec.width = enemyWidth;
+			enemies[i].rec.height = enemyHeight;
 			enemies[i].isAlive = true;
+			//enemies[i].sprite = LoadTexture();
 		}
 	}
 
@@ -36,7 +37,7 @@ namespace Game
 	{
 		for (int i = 0; i < oneEnemy; i++)
 		{
-			DrawRectangle(static_cast<int>(enemies[i].pos.x), static_cast<int>(enemies[i].pos.y), static_cast<int>(enemies[i].pos.width), static_cast<int>(enemies[i].pos.height), GREEN);
+			DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 		}
 	}
 
