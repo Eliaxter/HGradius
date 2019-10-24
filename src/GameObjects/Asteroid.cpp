@@ -10,7 +10,7 @@ namespace Game
 
 	Asteroids asteroid1[asteroidSize] = { 0 };
 
-	float speedAsteroid = 400.0f;
+	float speedAsteroid = 200.0f;
 
 	static int oneAsteroid = 1;
 

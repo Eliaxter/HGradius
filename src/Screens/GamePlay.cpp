@@ -81,7 +81,7 @@ namespace Game
 		{
 			for (int i = 0; i < asteroidSize; i++)
 			{
-				DrawRectangle(screenWidth / 2, screenHeight / 2, asteroid1[i].rec.width, asteroid1[i].rec.height, WHITE);
+				DrawRectangle(asteroid1[i].rec.x, asteroid1[i].rec.y, asteroid1[i].rec.width, asteroid1[i].rec.height, WHITE);
 			}
 
 		}
@@ -114,7 +114,7 @@ namespace Game
 	{
 		for (int i = 0; i < enemiesSize; i++)
 		{
-			if (CheckCollisionRecs(player, enemies[i].rec))
+			if (CheckCollisionRecs(player1.rec, enemies[i].rec))
 			{
 				enemies[i].isAlive = false;
 				lifesPlayer--;
@@ -145,11 +145,6 @@ namespace Game
 		{
 			state = GameState::GameMenu;
 		}
-	}
-
-	void BackGround()
-	{
-		
 	}
 
 	void Update()

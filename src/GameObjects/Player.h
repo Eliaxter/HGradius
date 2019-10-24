@@ -5,7 +5,12 @@
 
 namespace Game
 {
-	extern Rectangle player;
+	struct Player {
+		Rectangle rec;
+		bool isAlive;
+		Texture2D sprite;
+	};
+	extern Player player1;
 	extern float playerSpeed;
 
 	extern int pointsPlayer;

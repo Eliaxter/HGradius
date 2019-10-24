@@ -6,7 +6,7 @@
 
 namespace Game
 {
-	Rectangle player;
+	Player player1;
 	float playerSpeed;
 
 	int pointsPlayer = 5;
@@ -20,39 +20,39 @@ namespace Game
 
 	void InitPlayer()
 	{
-		player.width = playerWidth;
-		player.height = playerHeight;
-		player.x = playerPosX;
-		player.y = playerPosY;
+		player1.rec.width = playerWidth;
+		player1.rec.height = playerHeight;
+		player1.rec.x = playerPosX;
+		player1.rec.y = playerPosY;
 		playerSpeed = 600.0f;
 	}
 
 	void DrawPlayer()
 	{
-		DrawRectangle(static_cast<int>(player.x), static_cast<int>(player.y), static_cast<int>(player.width), static_cast<int>(player.height), WHITE);
+		DrawRectangle(static_cast<int>(player1.rec.x), static_cast<int>(player1.rec.y), static_cast<int>(player1.rec.width), static_cast<int>(player1.rec.height), WHITE);
 	}
 
 	void MovePlayer()
 	{
 		if (IsKeyDown(KEY_W))
 		{
-			player.y -= playerSpeed * GetFrameTime();
+			player1.rec.y -= playerSpeed * GetFrameTime();
 		}
 		if (IsKeyDown(KEY_S))
 		{
-			player.y += playerSpeed * GetFrameTime();
+			player1.rec.y += playerSpeed * GetFrameTime();
 		}
 	}
 	
 	void LimitMove()
 	{
-		if ((player.y) <= minScreenHeight)
+		if ((player1.rec.y) <= minScreenHeight)
 		{
-			player.y = minScreenHeight;
+			player1.rec.y = minScreenHeight;
 		}
-		if ((player.y + player.height) >= screenHeight)
+		if ((player1.rec.y + player1.rec.height) >= screenHeight)
 		{
-			player.y = screenHeight - player.height;
+			player1.rec.y = screenHeight - player1.rec.height;
 		}
 	}
 }
