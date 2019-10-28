@@ -50,7 +50,7 @@ namespace Game
 		{
 			UnloadTexture(asteroid1[i].sprite);
 		}
-
+		UnloadTexture(player1.sprite);
 	}
 }
 

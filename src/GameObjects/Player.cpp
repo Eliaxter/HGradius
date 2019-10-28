@@ -18,6 +18,13 @@ namespace Game
 	static float playerWidth = 40.0f;
 	static float playerHeight = 20.0f;
 
+	static Vector2 position;
+	static Rectangle frameRec;
+	static float currentFrame = 0;
+	static float framesCounter = 0;
+
+	static float maxCounter = 0.5f;
+
 	void InitPlayer()
 	{
 		player1.rec.width = playerWidth;
@@ -25,11 +32,27 @@ namespace Game
 		player1.rec.x = playerPosX;
 		player1.rec.y = playerPosY;
 		playerSpeed = 600.0f;
+		player1.sprite = LoadTexture("assets/sprites/Sheep.png");
+		frameRec = { 0.0f, 0.0f, static_cast<float>(player1.sprite.height), static_cast<float>(player1.sprite.width / 2) };
 	}
 
 	void DrawPlayer()
 	{
-		DrawRectangle(static_cast<int>(player1.rec.x), static_cast<int>(player1.rec.y), static_cast<int>(player1.rec.width), static_cast<int>(player1.rec.height), WHITE);
+		framesCounter += GetFrameTime();
+
+		if (framesCounter >= (maxCounter))
+		{
+			framesCounter = 0;
+
+			currentFrame++;
+			if (currentFrame > 1)
+				currentFrame = 0;
+
+			frameRec.x = static_cast<float>(currentFrame*(player1.sprite.width / 2));
+		}
+		position = { player1.rec.x, player1.rec.y };
+
+		DrawTextureRec(player1.sprite, frameRec, position, WHITE);
 	}
 
 	void MovePlayer()

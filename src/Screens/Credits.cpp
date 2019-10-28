@@ -22,7 +22,7 @@ namespace Game
 	void DrawTextCredits()
 	{
 		DrawText("Credits", halfScreenWidth, halfScreenHeight, fontSize1, WHITE);
-		DrawText("Version 0.1", halfScreenWidth, textPosY1, fontSize2, WHITE);
+		DrawText("Version 0.2", halfScreenWidth, textPosY1, fontSize2, WHITE);
 		DrawText("Back to Final: B", halfScreenWidth, textPosY2, fontSize2, WHITE);
 	}
 
