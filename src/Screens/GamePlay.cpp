@@ -39,7 +39,8 @@ namespace Game
 		{
 			if (limitEnemies == false)
 			{
-				DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
+				DrawTextureRec(enemies[i].sprite, frameRec, position, WHITE);
+				//DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 				countEnemy++;
 				if (countEnemy == enemiesSize)
 				{

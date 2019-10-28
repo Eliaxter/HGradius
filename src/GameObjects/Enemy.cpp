@@ -20,6 +20,13 @@ namespace Game
 
 	static int oneEnemy = 1;
 
+	Vector2 position;
+	Rectangle frameRec;
+	float currentFrame = 0;
+	float framesCounter = 0;
+
+	float maxCounter = 0.5f;
+
 	void InitEnemy()
 	{
 		for (int i = 0; i < enemiesSize; i++)
@@ -29,7 +36,9 @@ namespace Game
 			enemies[i].rec.width = enemyWidth;
 			enemies[i].rec.height = enemyHeight;
 			enemies[i].isAlive = true;
-			//enemies[i].sprite = LoadTexture();
+			enemies[i].sprite = LoadTexture("assets/sprites/Sheep-2.png");
+			frameRec = { 0.0f, 0.0f, static_cast<float>(enemies[i].sprite.height), static_cast<float>(enemies[i].sprite.width / 2) };
+
 		}
 	}
 
@@ -37,7 +46,22 @@ namespace Game
 	{
 		for (int i = 0; i < oneEnemy; i++)
 		{
-			DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
+			framesCounter += GetFrameTime();
+
+			if (framesCounter >= (maxCounter))
+			{
+				framesCounter = 0;
+
+				currentFrame++;
+				if (currentFrame > 1)
+					currentFrame = 0;
+
+				frameRec.x = static_cast<float>(currentFrame*(enemies[i].sprite.width / 2));
+			}
+			position = { enemies[i].rec.x, enemies[i].rec.y };
+
+			DrawTextureRec(enemies[i].sprite, frameRec, position, WHITE);
+			//DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 		}
 	}
 

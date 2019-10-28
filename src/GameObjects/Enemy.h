@@ -21,6 +21,13 @@ namespace Game
 
 	extern bool limitEnemies;
 
+	extern Vector2 position;
+	extern Rectangle frameRec;
+	extern float currentFrame;
+	extern float framesCounter;
+	
+	extern float maxCounter;
+
 	void InitEnemy();
 	void DrawEnemy();
 }

@@ -49,6 +49,7 @@ namespace Game
 		for (int i = 0; i < 5; i++)
 		{
 			UnloadTexture(asteroid1[i].sprite);
+			UnloadTexture(enemies[i].sprite);
 		}
 		UnloadTexture(player1.sprite);
 	}
