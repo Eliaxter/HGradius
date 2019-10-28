@@ -81,7 +81,8 @@ namespace Game
 		{
 			for (int i = 0; i < asteroidSize; i++)
 			{
-				DrawRectangle(asteroid1[i].rec.x, asteroid1[i].rec.y, asteroid1[i].rec.width, asteroid1[i].rec.height, WHITE);
+				//DrawRectangle(asteroid1[i].rec.x, asteroid1[i].rec.y, asteroid1[i].rec.width, asteroid1[i].rec.height, WHITE);
+				DrawTexture(asteroid1[i].sprite, asteroid1[i].rec.x, asteroid1[i].rec.y, WHITE);
 			}
 
 		}

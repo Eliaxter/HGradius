@@ -7,6 +7,9 @@
 #include "GamePlay.h"
 #include "FinalMenu.h"
 #include "Credits.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "Asteroid.h"
 
 namespace Game
 {
@@ -42,6 +45,10 @@ namespace Game
 				CloseWindow();
 			}
 			EndDrawing();
+		}
+		for (int i = 0; i < 5; i++)
+		{
+			UnloadTexture(asteroid1[i].sprite);
 		}
 
 	}

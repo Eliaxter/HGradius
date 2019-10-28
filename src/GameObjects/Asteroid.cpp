@@ -23,7 +23,7 @@ namespace Game
 			asteroid1[i].rec.width = 30.0f;
 			asteroid1[i].rec.height = 10.0f;
 			asteroid1[i].isAlive = true;
-			//asteroid1[i].sprite = LoadTexture();
+			asteroid1[i].sprite = LoadTexture("assets/sprites/asteroide.png");
 		}
 	}
 
@@ -32,6 +32,7 @@ namespace Game
 		for (int i = 0; i < oneAsteroid; i++)
 		{
 			DrawRectangle(static_cast<int>(asteroid1[i].rec.x), static_cast<int>(asteroid1[i].rec.y), static_cast<int>(asteroid1[i].rec.width), static_cast<int>(asteroid1[i].rec.height), WHITE);
+			DrawTexture(asteroid1[i].sprite, asteroid1[i].rec.x, asteroid1[i].rec.y, WHITE);
 		}
 	}
 }

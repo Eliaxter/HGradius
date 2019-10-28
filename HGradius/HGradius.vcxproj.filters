@@ -42,6 +42,9 @@
     <ClCompile Include="..\src\Screens\Menu.cpp">
       <Filter>src\Screens</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\GameObjects\Asteroid.cpp">
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\GameObjects\Enemy.h">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="..\src\Screens\Menu.h">
       <Filter>src\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameObjects\Asteroid.h">
+      <Filter>src\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
