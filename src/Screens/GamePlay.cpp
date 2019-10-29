@@ -55,7 +55,6 @@ namespace Game
 					frameRec.x = static_cast<float>(currentFrame*(enemies[i].sprite.width / 2));
 				}
 				enemyPosition = { enemies[i].rec.x -30.0f, enemies[i].rec.y - enemies[i].rec.y / 3};
-				DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 
 				DrawTextureRec(enemies[i].sprite, frameRec, enemyPosition, WHITE);
 				countEnemy++;
@@ -101,7 +100,6 @@ namespace Game
 			{
 				DrawTexture(asteroid1[i].sprite, asteroid1[i].rec.x, asteroid1[i].rec.y, WHITE);
 			}
-
 		}
 	}
 
@@ -159,7 +157,6 @@ namespace Game
 		if (IsKeyDown(KEY_SPACE))
 		{
 			DrawBullet();
-			MoveBullets();
 		}
 	}
 
@@ -188,6 +185,7 @@ namespace Game
 			MoveEnemys();
 			LimitScreenEnemy();
 			MoveAsteroids();
+			MoveBullets();
 			LimitScreenAsteroids();
 			CheckCollisionEnemyPlayer();
 			CheckLifesPlayer();
@@ -211,6 +209,5 @@ namespace Game
 		DrawPlayer();
 		DrawAsteroids();
 		DrawEnemys();
-		DrawBullet();
 	}
 }
