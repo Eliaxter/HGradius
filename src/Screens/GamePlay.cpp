@@ -14,6 +14,7 @@ namespace Game
 
 	static int fontSizePause = 50;
 
+	static float tenSeconds = 10.0f;
 
 	void DrawGamePlay()
 	{
@@ -39,7 +40,21 @@ namespace Game
 		{
 			if (limitEnemies == false)
 			{
-				DrawTextureRec(enemies[i].sprite, frameRec, position, WHITE);
+				framesCounter += GetFrameTime();
+
+				if (framesCounter >= (maxCounter))
+				{
+					framesCounter = 0;
+
+					currentFrame++;
+					if (currentFrame > 1)
+						currentFrame = 0;
+
+					frameRec.x = static_cast<float>(currentFrame*(enemies[i].sprite.width / 2));
+				}
+				enemyPosition = { enemies[i].rec.x, enemies[i].rec.y };
+
+				DrawTextureRec(enemies[i].sprite, frameRec, enemyPosition, WHITE);
 				//DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 				countEnemy++;
 				if (countEnemy == enemiesSize)
@@ -78,7 +93,7 @@ namespace Game
 
 	void DrawAsteroids()
 	{
-		if (timer / static_cast<float>(GetFPS()) > 10.0f)
+		if (timer / static_cast<float>(GetFPS()) > tenSeconds)
 		{
 			for (int i = 0; i < asteroidSize; i++)
 			{
@@ -133,6 +148,14 @@ namespace Game
 		}
 	}
 
+	void ShootInput()
+	{
+		if (IsKeyDown(KEY_P))
+		{
+			DrawRectangle(player1.rec.x, player1.rec.y / 2, 30, 20, WHITE);
+		}
+	}
+
 	void PauseInput()
 	{
 		if (IsKeyPressed(KEY_SPACE))
@@ -161,6 +184,7 @@ namespace Game
 			LimitScreenAsteroids();
 			CheckCollisionEnemyPlayer();
 			CheckLifesPlayer();
+			ShootInput();
 			PauseInput();
 			BackMenuInput();
 		}
@@ -178,7 +202,7 @@ namespace Game
 	void Draw()
 	{
 		DrawPlayer();
-		DrawEnemys();
 		DrawAsteroids();
+		DrawEnemys();
 	}
 }

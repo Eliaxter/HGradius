@@ -20,7 +20,7 @@ namespace Game
 
 	static int oneEnemy = 1;
 
-	Vector2 position;
+	Vector2 enemyPosition;
 	Rectangle frameRec;
 	float currentFrame = 0;
 	float framesCounter = 0;
@@ -37,7 +37,7 @@ namespace Game
 			enemies[i].rec.height = enemyHeight;
 			enemies[i].isAlive = true;
 			enemies[i].sprite = LoadTexture("assets/sprites/Sheep-2.png");
-			frameRec = { 0.0f, 0.0f, static_cast<float>(enemies[i].sprite.height), static_cast<float>(enemies[i].sprite.width / 2) };
+			frameRec = { 0.0f, 0.0f, static_cast<float>(enemies[i].sprite.height / 2), static_cast<float>(enemies[i].sprite.width / 2) };
 
 		}
 	}
@@ -58,9 +58,9 @@ namespace Game
 
 				frameRec.x = static_cast<float>(currentFrame*(enemies[i].sprite.width / 2));
 			}
-			position = { enemies[i].rec.x, enemies[i].rec.y };
+			enemyPosition = { enemies[i].rec.x, enemies[i].rec.y };
 
-			DrawTextureRec(enemies[i].sprite, frameRec, position, WHITE);
+			DrawTextureRec(enemies[i].sprite, frameRec, enemyPosition, WHITE);
 			//DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 		}
 	}

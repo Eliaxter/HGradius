@@ -21,7 +21,7 @@ namespace Game
 
 	extern bool limitEnemies;
 
-	extern Vector2 position;
+	extern Vector2 enemyPosition;
 	extern Rectangle frameRec;
 	extern float currentFrame;
 	extern float framesCounter;

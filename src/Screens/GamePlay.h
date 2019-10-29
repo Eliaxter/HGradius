@@ -13,6 +13,7 @@ namespace Game
 	void LimitScreenAsteroids();
 	void CheckCollisionEnemyPlayer();
 	void CheckLifesPlayer();
+	void ShootInput();
 	void PauseInput();
 	void BackMenuInput();
 	void Update();
