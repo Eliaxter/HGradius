@@ -10,6 +10,7 @@ namespace Game
 	void LimitScreenEnemy();
 	void DrawAsteroids();
 	void MoveAsteroids();
+	void MoveBullets();
 	void LimitScreenAsteroids();
 	void CheckCollisionEnemyPlayer();
 	void CheckLifesPlayer();

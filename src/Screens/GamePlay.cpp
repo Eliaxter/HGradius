@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Asteroid.h"
+#include "Bullet.h"
 #include "Game.h"
 
 namespace Game
@@ -29,6 +30,7 @@ namespace Game
 		DrawEnemy();
 		InitAsteroid();
 		DrawAsteroid();
+		InitBullet();
 		lifesPlayer = 3;
 		limitEnemies = false;
 		timer = 0.0f;
@@ -52,10 +54,10 @@ namespace Game
 
 					frameRec.x = static_cast<float>(currentFrame*(enemies[i].sprite.width / 2));
 				}
-				enemyPosition = { enemies[i].rec.x, enemies[i].rec.y };
+				enemyPosition = { enemies[i].rec.x -30.0f, enemies[i].rec.y - enemies[i].rec.y / 3};
+				DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 
 				DrawTextureRec(enemies[i].sprite, frameRec, enemyPosition, WHITE);
-				//DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 				countEnemy++;
 				if (countEnemy == enemiesSize)
 				{
@@ -97,7 +99,6 @@ namespace Game
 		{
 			for (int i = 0; i < asteroidSize; i++)
 			{
-				//DrawRectangle(asteroid1[i].rec.x, asteroid1[i].rec.y, asteroid1[i].rec.width, asteroid1[i].rec.height, WHITE);
 				DrawTexture(asteroid1[i].sprite, asteroid1[i].rec.x, asteroid1[i].rec.y, WHITE);
 			}
 
@@ -113,6 +114,11 @@ namespace Game
 				asteroid1[i].rec.x -= speedAsteroid * GetFrameTime();
 			}
 		}
+	}
+
+	void MoveBullets()
+	{
+		bullets.rec.x += 600.0f * GetFrameTime();
 	}
 
 	void LimitScreenAsteroids()
@@ -150,15 +156,16 @@ namespace Game
 
 	void ShootInput()
 	{
-		if (IsKeyDown(KEY_P))
+		if (IsKeyDown(KEY_SPACE))
 		{
-			DrawRectangle(player1.rec.x, player1.rec.y / 2, 30, 20, WHITE);
+			DrawBullet();
+			MoveBullets();
 		}
 	}
 
 	void PauseInput()
 	{
-		if (IsKeyPressed(KEY_SPACE))
+		if (IsKeyPressed(KEY_P))
 		{
 			pause = true;
 		}
@@ -191,7 +198,7 @@ namespace Game
 		else
 		{
 			DrawText("PAUSA", halfScreenWidth, halfScreenHeight, fontSizePause, WHITE);
-			if (IsKeyPressed(KEY_SPACE))
+			if (IsKeyPressed(KEY_P))
 			{
 				pause = false;
 			}
@@ -204,5 +211,6 @@ namespace Game
 		DrawPlayer();
 		DrawAsteroids();
 		DrawEnemys();
+		DrawBullet();
 	}
 }

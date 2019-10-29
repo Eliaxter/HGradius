@@ -45,6 +45,9 @@
     <ClCompile Include="..\src\GameObjects\Asteroid.cpp">
       <Filter>src\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\GameObjects\Bullet.cpp">
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\GameObjects\Enemy.h">
@@ -72,6 +75,9 @@
       <Filter>src\Screens</Filter>
     </ClInclude>
     <ClInclude Include="..\src\GameObjects\Asteroid.h">
+      <Filter>src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameObjects\Bullet.h">
       <Filter>src\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
