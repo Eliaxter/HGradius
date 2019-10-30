@@ -14,7 +14,7 @@ namespace Game
 		bullets.rec.y = player1.rec.y / 2;
 		bullets.rec.width = 30.0f;
 		bullets.rec.height = 20.0f;
-		bullets.isAlive = true;
+		bullets.isAlive = false;
 	}
 
 	void DrawBullet()

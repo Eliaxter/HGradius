@@ -29,7 +29,7 @@ namespace Game
 		InitEnemy();
 		DrawEnemy();
 		InitAsteroid();
-		DrawAsteroid();
+		//DrawAsteroid();
 		InitBullet();
 		lifesPlayer = 3;
 		limitEnemies = false;
@@ -156,7 +156,7 @@ namespace Game
 	{
 		if (IsKeyDown(KEY_SPACE))
 		{
-			DrawBullet();
+			bullets.isAlive = true;
 		}
 	}
 
@@ -185,7 +185,10 @@ namespace Game
 			MoveEnemys();
 			LimitScreenEnemy();
 			MoveAsteroids();
-			MoveBullets();
+			if (bullets.isAlive == true)
+			{
+				MoveBullets();
+			}
 			LimitScreenAsteroids();
 			CheckCollisionEnemyPlayer();
 			CheckLifesPlayer();
@@ -209,5 +212,9 @@ namespace Game
 		DrawPlayer();
 		DrawAsteroids();
 		DrawEnemys();
+		if (bullets.isAlive == true)
+		{
+			DrawBullet();
+		}
 	}
 }
