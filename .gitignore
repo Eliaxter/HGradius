@@ -19,6 +19,7 @@ x64/
 x86/
 bld/
 [Bb]in/
+!lib\raylib-2.5.0-Win32-msvc15\[Bb]in
 [Oo]bj/
 [Ll]og/
 
