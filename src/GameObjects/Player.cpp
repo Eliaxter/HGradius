@@ -16,7 +16,7 @@ namespace Game
 	static float playerPosY = screenHeight / 7;
 
 	static float playerWidth = 40.0f;
-	static float playerHeight = 20.0f;
+	static float playerHeight = 80.0f;
 
 	static Vector2 position;
 	static Rectangle frameRec;

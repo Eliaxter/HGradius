@@ -13,8 +13,8 @@ namespace Game
 	{
 		for (int i = 0; i < bulletSize; i++)
 		{
-			bullets[i].rec.x = player1.rec.x;
-			bullets[i].rec.y = player1.rec.y;
+			bullets[i].rec.x = player1.rec.x + 75;
+			bullets[i].rec.y = player1.rec.y - 75;
 			bullets[i].rec.width = 30.0f;
 			bullets[i].rec.height = 20.0f;
 			bullets[i].isAlive = false;

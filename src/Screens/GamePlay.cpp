@@ -29,7 +29,6 @@ namespace Game
 		InitEnemy();
 		DrawEnemy();
 		InitAsteroid();
-		//DrawAsteroid();
 		InitBullet();
 		lifesPlayer = 3;
 		limitEnemies = false;
@@ -54,9 +53,10 @@ namespace Game
 
 					frameRec.x = static_cast<float>(currentFrame*(enemies[i].sprite.width / 2));
 				}
-				enemyPosition = { enemies[i].rec.x -30.0f, enemies[i].rec.y - enemies[i].rec.y / 3};
+				enemyPosition = { enemies[i].rec.x -100.0f, enemies[i].rec.y - 10.0f};
 
 				DrawTextureRec(enemies[i].sprite, frameRec, enemyPosition, WHITE);
+				//DrawRectangle(static_cast<int>(enemies[i].rec.x), static_cast<int>(enemies[i].rec.y), static_cast<int>(enemies[i].rec.width), static_cast<int>(enemies[i].rec.height), GREEN);
 				countEnemy++;
 				if (countEnemy == enemiesSize)
 				{
@@ -142,7 +142,8 @@ namespace Game
 			{
 				if (bullets[i].isAlive == true)
 				{
-					bullets[i].isAlive = false;
+					//bullets[i].isAlive = false;
+					InitBullet();
 				}
 			}
 		}
@@ -164,12 +165,16 @@ namespace Game
 
 	void CheckCollisionBulletEnemy()
 	{
-		if (CheckCollisionRecs(bullets->rec, enemies->rec))
+		for (int i = 0; i < enemiesSize; i++)
 		{
-			enemies->rec.x = -500.0f;
-			enemies->rec.y = -500.0f;
-			bullets->isAlive = false;
+			if (CheckCollisionRecs(bullets[i].rec, enemies[i].rec))
+			{
+				enemies[i].rec.x = -500.0f;
+				enemies[i].rec.y = -500.0f;
+				bullets[i].isAlive = false;
+			}
 		}
+		
 	}
 
 	void CheckLifesPlayer() 

@@ -16,7 +16,7 @@ namespace Game
 	bool limitEnemies;
 
 	static float enemyWidth = 50.0f;
-	static float enemyHeight = 15.0f;
+	static float enemyHeight = 250.0f;
 
 	static int oneEnemy = 1;
 
