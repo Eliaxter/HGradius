@@ -10,7 +10,8 @@ namespace Game
 		bool isAlive;
 		Texture2D sprite;
 	};
-	extern Bullet bullets;
+	extern const int bulletSize;
+	extern Bullet bullets[5];
 
 	void InitBullet();
 	void DrawBullet();

@@ -116,7 +116,10 @@ namespace Game
 
 	void MoveBullets()
 	{
-		bullets.rec.x += 600.0f * GetFrameTime();
+		for (int i = 0; i < bulletSize; i++)
+		{
+			bullets[i].rec.x += 600.0f * GetFrameTime();
+		}
 	}
 
 	void LimitScreenAsteroids()
@@ -129,6 +132,21 @@ namespace Game
 				asteroid1[i].rec.y = GetRandomValue(screenHeight, screenHeight / heightDivisor);
 			}
 		}
+	}
+
+	void LimitScreenBullet()
+	{
+		for (int i = 0; i < bulletSize; i++)
+		{
+			if (bullets[i].rec.x >= screenWidth)
+			{
+				if (bullets[i].isAlive == true)
+				{
+					bullets[i].isAlive = false;
+				}
+			}
+		}
+		
 	}
 
 	void CheckCollisionEnemyPlayer()
@@ -144,6 +162,16 @@ namespace Game
 		
 	}
 
+	void CheckCollisionBulletEnemy()
+	{
+		if (CheckCollisionRecs(bullets->rec, enemies->rec))
+		{
+			enemies->rec.x = -500.0f;
+			enemies->rec.y = -500.0f;
+			bullets->isAlive = false;
+		}
+	}
+
 	void CheckLifesPlayer() 
 	{
 		if (lifesPlayer <= 0)
@@ -156,7 +184,10 @@ namespace Game
 	{
 		if (IsKeyDown(KEY_SPACE))
 		{
-			bullets.isAlive = true;
+			for (int i = 0; i < bulletSize; i++)
+			{
+				bullets[i].isAlive = true;
+			}
 		}
 	}
 
@@ -185,12 +216,17 @@ namespace Game
 			MoveEnemys();
 			LimitScreenEnemy();
 			MoveAsteroids();
-			if (bullets.isAlive == true)
+			for (int i = 0; i < bulletSize; i++)
 			{
-				MoveBullets();
+				if (bullets[i].isAlive == true)
+				{
+					MoveBullets();
+				}
 			}
 			LimitScreenAsteroids();
+			LimitScreenBullet();
 			CheckCollisionEnemyPlayer();
+			CheckCollisionBulletEnemy();
 			CheckLifesPlayer();
 			ShootInput();
 			PauseInput();
@@ -212,9 +248,12 @@ namespace Game
 		DrawPlayer();
 		DrawAsteroids();
 		DrawEnemys();
-		if (bullets.isAlive == true)
+		for (int i = 0; i < bulletSize; i++)
 		{
-			DrawBullet();
+			if (bullets[i].isAlive == true)
+			{
+				DrawBullet();
+			}
 		}
 	}
 }

@@ -6,19 +6,26 @@
 
 namespace Game
 {
-	Bullet bullets;
+	const int bulletSize = 5;
+	Bullet bullets[bulletSize] = { 0 };
 
 	void InitBullet()
 	{
-		bullets.rec.x = player1.rec.x;
-		bullets.rec.y = player1.rec.y / 2;
-		bullets.rec.width = 30.0f;
-		bullets.rec.height = 20.0f;
-		bullets.isAlive = false;
+		for (int i = 0; i < bulletSize; i++)
+		{
+			bullets[i].rec.x = player1.rec.x;
+			bullets[i].rec.y = player1.rec.y;
+			bullets[i].rec.width = 30.0f;
+			bullets[i].rec.height = 20.0f;
+			bullets[i].isAlive = false;
+		}
 	}
 
 	void DrawBullet()
 	{
-		DrawRectangle(bullets.rec.x, bullets.rec.y, bullets.rec.width, bullets.rec.height, WHITE);
+		for (int i = 0; i < bulletSize; i++)
+		{
+			DrawRectangle(bullets[i].rec.x, bullets[i].rec.y, bullets[i].rec.width, bullets[i].rec.height, WHITE);
+		}
 	}
 }
